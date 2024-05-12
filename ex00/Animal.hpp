@@ -17,9 +17,11 @@ class Animal {
 		Animal(const Animal& animal);
 		~Animal();
 
+		const std::string&	getType() const;
+
 		Animal&	operator=(const Animal& animal);
 
-		virtual void	makeSound() = 0;
+		void	makeSound() const;
 };
 
 #endif //ANIMAL_HPP
