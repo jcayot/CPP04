@@ -1,7 +1,7 @@
 NAME = poly
 CC = c++
 CFLAGS = -std=c++17 -Wall -Wextra -Werror
-SRCS =  Cat.cpp Dog.cpp Animal.cpp main.cpp
+SRCS = WrongCat.cpp WrongAnimal.cpp Cat.cpp Dog.cpp Animal.cpp main.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
