@@ -21,7 +21,7 @@ class Animal {
 
 		Animal&	operator=(const Animal& animal);
 
-		void	makeSound() const;
+		virtual void	makeSound() const;
 };
 
 #endif //ANIMAL_HPP
