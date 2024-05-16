@@ -1,7 +1,7 @@
-NAME = abstract
+NAME = ex03
 CC = c++
 CFLAGS = -std=c++17 -Wall -Wextra -Werror
-SRCS = Brain.cpp WrongCat.cpp WrongAnimal.cpp Cat.cpp Dog.cpp Animal.cpp main.cpp
+SRCS = main.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp IMateriaSource.cpp ICharacter.cpp AMateria.cpp main.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
