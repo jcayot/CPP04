@@ -2,8 +2,8 @@
 // Created by jules on 16/05/2024.
 //
 
-#ifndef CPP04_IMATERIASOURCE_HPP
-#define CPP04_IMATERIASOURCE_HPP
+#ifndef IMATERIASOURCE_HPP
+#define IMATERIASOURCE_HPP
 
 #include <string>
 #include "AMateria.hpp"
@@ -16,4 +16,4 @@ class IMateriaSource {
 };
 
 
-#endif //CPP04_IMATERIASOURCE_HPP
+#endif //IMATERIASOURCE_HPP

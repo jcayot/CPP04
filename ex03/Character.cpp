@@ -24,19 +24,22 @@ Character::Character(const Character& character) {
 
 Character::~Character() {
 	std::cout << "Character destructor constructor called" << std::endl;
-	for (int i = 0; i < 4; ++i) {
-		if (materials[i] != nullptr)
-			delete materials[i];
-	}
-	for (int i = 0; i < formerIndex; ++i) {
-		if (materials[i] != nullptr)
-			delete formerMaterials[formerIndex];
-	}
+	freeCharacter();
 }
 
 Character& Character::operator=(const Character& character) {
+	freeCharacter();
+	this -> name = character.name;
 	for (int i = 0; i < 4; i++)
 		this->materials[i] = character.materials[i];
+	this -> formerMaterials = nullptr;
+	this -> formerIndex = 0;
+	if (character.formerMaterials != nullptr) {
+		for (int i = 0; i < character.formerIndex; i++) {
+			if (character.formerMaterials[i] != nullptr)
+				addFormer(character.formerMaterials[i]);
+		}
+	}
 	return (*this);
 }
 
@@ -88,4 +91,17 @@ void Character::deleteFormer(AMateria* m) {
 			break ;
 		}
 	}
+}
+
+void Character::freeCharacter() {
+	for (int i = 0; i < 4; ++i) {
+		if (materials[i] != nullptr)
+			delete materials[i];
+	}
+	for (int i = 0; i < formerIndex; ++i) {
+		if (materials[i] != nullptr)
+			delete formerMaterials[formerIndex];
+	}
+	if (formerMaterials != nullptr)
+		delete formerMaterials;
 }

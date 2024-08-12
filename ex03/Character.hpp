@@ -5,8 +5,8 @@
 #ifndef CHARACTER_HPP
 #define CHARACTER_HPP
 
-#include <string>
-#include "AMateria.hpp"
+#include <iostream>
+#include "ICharacter.hpp"
 
 class Character : public ICharacter {
 	private:
@@ -32,7 +32,8 @@ class Character : public ICharacter {
 	private:
 		void	addFormer(AMateria *m);
 		void	deleteFormer(AMateria *m);
+		void	freeCharacter();
 };
 
 
-#endif //CPP04_CHARACTER_HPP
+#endif //CHARACTER_HPP

@@ -7,7 +7,7 @@
 
 #include "AMateria.hpp"
 
-class Ice : public AMateria{
+class Ice : public AMateria {
 	public:
 		Ice();
 		Ice(std::string const& type);
