@@ -4,12 +4,8 @@
 
 #include "Cure.hpp"
 
-Cure::Cure() : AMateria(){
+Cure::Cure() : AMateria("cure"){
 	std::cout << "Cure default constructor called" << std::endl;
-}
-
-Cure::Cure(const std::string& type) : AMateria(type) {
-	std::cout << "Cure constructor called" << std::endl;
 }
 
 Cure::Cure(const Cure& cure) : AMateria(cure){

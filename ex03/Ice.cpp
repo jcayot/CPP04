@@ -4,12 +4,8 @@
 
 #include "Ice.hpp"
 
-Ice::Ice() : AMateria(){
+Ice::Ice() : AMateria("ice"){
 	std::cout << "Ice default constructor called" << std::endl;
-}
-
-Ice::Ice(const std::string& type) : AMateria(type) {
-	std::cout << "Ice constructor called" << std::endl;
 }
 
 Ice::Ice(const Ice& ice) : AMateria(ice){

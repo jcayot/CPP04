@@ -65,12 +65,8 @@ void Character::unequip(int idx) {
 }
 
 void Character::use(int idx, ICharacter& target) {
-	if (materials[idx] != nullptr) {
-		if (materials[idx]->getType() == "ice")
-			std::cout << "* shoots an ice bolt at " + target.getName() + " *";
-		else if (materials[idx]->getType() == "cure")
-			std::cout << "* heals " + target.getName() + "’s wounds *";
-	}
+	if (materials[idx] != nullptr)
+		materials[idx]->use(target);
 }
 
 void Character::addFormer(AMateria* m) {

@@ -10,7 +10,6 @@
 class Ice : public AMateria {
 	public:
 		Ice();
-		Ice(std::string const& type);
 		Ice(Ice const& ice);
 		~Ice();
 

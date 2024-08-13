@@ -29,15 +29,15 @@ MateriaSource& MateriaSource::operator=(const MateriaSource& materiaSource) {
 
 void MateriaSource::learnMateria(AMateria* materia) {
 	if (this->materialsIndex < 4) {
-		this->materials[this->materialsIndex] = materia->clone();
+		this->materials[this->materialsIndex] = materia;
 		this->materialsIndex++;
 	}
 }
 
 AMateria* MateriaSource::createMateria(const std::string& type) {
 	for (int i = 0; i < materialsIndex; i++) {
-		if (materials[materialsIndex]->getType() == type)
-			return materials[i]->clone();
+		if (materials[i]->getType() == type)
+			return (materials[i]->clone());
 	}
 	return (nullptr);
 }
