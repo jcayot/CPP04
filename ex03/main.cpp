@@ -9,7 +9,8 @@
 #include "Cure.hpp"
 #include "Character.hpp"
 
-int main() {
+
+int main( void ) {
 	IMateriaSource* src = new MateriaSource();
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
@@ -24,5 +25,15 @@ int main() {
 	me->use(1, *bob);
 	delete bob;
 	delete me;
+
+	IMateriaSource* src2 = new MateriaSource();
+	src2->learnMateria(new Ice());
+	src2->learnMateria(new Ice());
+	src2->learnMateria(new Ice());
+	src2->learnMateria(new Ice());
+	src2->learnMateria(new Ice());
+	*src = *src2;
 	delete src;
+	delete src2;
+	return 0;
 }

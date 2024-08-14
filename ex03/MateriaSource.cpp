@@ -31,7 +31,8 @@ void MateriaSource::learnMateria(AMateria* materia) {
 	if (this->materialsIndex < 4) {
 		this->materials[this->materialsIndex] = materia;
 		this->materialsIndex++;
-	}
+	} else
+		delete materia;
 }
 
 AMateria* MateriaSource::createMateria(const std::string& type) {
