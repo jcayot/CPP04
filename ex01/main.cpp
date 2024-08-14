@@ -18,5 +18,10 @@ int main() {
 	for (int i = 0; i < 10; i++)
 		delete animals[i];
 
-	return 0;
+	Cat cat;
+
+	Cat catCopy(cat);
+
+	catCopy.makeSound();
+	return (0);
 }
