@@ -23,22 +23,21 @@ Character::Character(const Character& character) {
 }
 
 Character::~Character() {
-	std::cout << "Character destructor constructor called" << std::endl;
+	std::cout << "Character destructor called" << std::endl;
 	freeCharacter();
 }
 
 Character& Character::operator=(const Character& character) {
-	freeCharacter();
-	this -> name = character.name;
-	for (int i = 0; i < 4; i++)
-		this->materials[i] = character.materials[i];
-	this -> formerMaterials = nullptr;
-	this -> formerIndex = 0;
-	if (character.formerMaterials != nullptr) {
-		for (int i = 0; i < character.formerIndex; i++) {
-			if (character.formerMaterials[i] != nullptr)
-				addFormer(character.formerMaterials[i]);
+	std::cout << "Character assignment operator called" << std::endl;
+	if (this != &character) {
+		freeCharacter();
+		this -> name = character.name;
+		for (int i = 0; i < 4; i++) {
+			if (character.materials[i] != nullptr)
+				this->materials[i] = character.materials[i]->clone();
 		}
+		this -> formerMaterials = nullptr;
+		this -> formerIndex = 0;
 	}
 	return (*this);
 }
@@ -58,15 +57,19 @@ void Character::equip(AMateria* m) {
 }
 
 void Character::unequip(int idx) {
-	if (materials[idx] != nullptr) {
-		addFormer(materials[idx]);
-		materials[idx] = nullptr;
+	if (idx >= 0 && idx < 4) {
+		if (materials[idx] != nullptr) {
+			addFormer(materials[idx]);
+			materials[idx] = nullptr;
+		}
 	}
 }
 
 void Character::use(int idx, ICharacter& target) {
-	if (materials[idx] != nullptr)
-		materials[idx]->use(target);
+	if (idx >= 0 && idx < 4) {
+		if (materials[idx] != nullptr)
+			materials[idx]->use(target);
+	}
 }
 
 void Character::addFormer(AMateria* m) {
@@ -95,7 +98,7 @@ void Character::freeCharacter() {
 			delete materials[i];
 	}
 	for (int i = 0; i < formerIndex; ++i) {
-		if (materials[i] != nullptr)
+		if (formerMaterials[i] != nullptr)
 			delete formerMaterials[formerIndex];
 	}
 	if (formerMaterials != nullptr)

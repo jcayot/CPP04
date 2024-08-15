@@ -1,6 +1,6 @@
 NAME = ex03
 CC = c++
-CFLAGS = -std=c++17 -Wall -Wextra -Werror -g
+CFLAGS = -std=c++17 -Wall -Wextra -Werror
 SRCS = Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp AMateria.cpp main.cpp
 OBJS = $(SRCS:.cpp=.o)
 
