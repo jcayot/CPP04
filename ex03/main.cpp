@@ -10,7 +10,7 @@
 #include "Character.hpp"
 
 
-int main( void ) {
+int main() {
 	IMateriaSource* src = new MateriaSource();
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
