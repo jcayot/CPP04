@@ -28,7 +28,6 @@ Character::~Character() {
 }
 
 Character& Character::operator=(const Character& character) {
-	std::cout << "Character assignment operator called" << std::endl;
 	if (this != &character) {
 		freeCharacter();
 		this -> name = character.name;

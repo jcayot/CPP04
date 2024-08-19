@@ -23,7 +23,8 @@ AMateria::~AMateria() {
 }
 
 AMateria& AMateria::operator=(const AMateria& aMateria) {
-	this->type = aMateria.type;
+	if (this != &aMateria)
+		this->type = aMateria.type;
 	return (*this);
 }
 
