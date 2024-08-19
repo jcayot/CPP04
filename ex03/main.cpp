@@ -23,18 +23,21 @@ int main( void ) {
 	ICharacter* bob = new Character("bob");
 	me->use(0, *bob);
 	me->use(1, *bob);
+	tmp = src->createMateria("cure");
+	bob->equip(tmp);
+	*bob = *me;
 	bob->use(0, *me);
 	delete bob;
 	delete me;
 
-	IMateriaSource* src2 = new MateriaSource();
-	src2->learnMateria(new Ice());
-	src2->learnMateria(new Ice());
-	src2->learnMateria(new Ice());
-	src2->learnMateria(new Ice());
-	src2->learnMateria(new Ice());
-	*src = *src2;
+	// IMateriaSource* src2 = new MateriaSource();
+	// src2->learnMateria(new Ice());
+	// src2->learnMateria(new Ice());
+	// src2->learnMateria(new Ice());
+	// src2->learnMateria(new Ice());
+	// src2->learnMateria(new Ice());
+	// *src = *src2;
 	delete src;
-	delete src2;
+	// delete src2;
 	return 0;
 }

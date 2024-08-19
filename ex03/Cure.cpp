@@ -16,6 +16,11 @@ Cure::~Cure() {
 	std::cout << "Cure destructor called" << std::endl;
 }
 
+Cure& Cure::operator=(const Cure& cure) {
+	AMateria::operator=(cure);
+	return (*this);
+}
+
 Cure* Cure::clone() const {
 	return new Cure(*this);
 }

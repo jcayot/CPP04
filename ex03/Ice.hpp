@@ -10,11 +10,12 @@
 class Ice : public AMateria {
 	public:
 		Ice();
-		Ice(Ice const& ice);
+		Ice(const Ice& ice);
 		~Ice();
 
-		Ice* clone() const;
+		Ice& operator=(const Ice& ice);
 
+		Ice*	clone() const;
 		void	use(ICharacter& target);
 };
 
